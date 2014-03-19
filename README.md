@@ -44,7 +44,7 @@ Running development server
 python manage.py runserver
 ```
 
-Open your browser [http://0.0.0.0:5000/](http://0.0.0.0:5000/).
+Open your browser [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 Running tests
 -------------
