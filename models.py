@@ -1,4 +1,4 @@
-# CADASTRO DE FAUNA
+# CADASTRO DE FAUNA COLEÇÃO
 from django.db import models
 
 
