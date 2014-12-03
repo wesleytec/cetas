@@ -1,0 +1,61 @@
+from django.db import models
+# CADASTRO FAUNA RESGATE
+
+
+GRUPO_CHOICE = (
+	('1', 'Amphibia'),
+	('2', 'Aves'),
+	('3', 'Mammalia'),
+	('4', 'Pisces'),
+	('5', 'Reptilia'),
+)
+
+ESTADO_CHOICE = (
+	('1', 'vivo'),
+	('2', 'obt campo'),
+	('3', 'obt laboratorio'),
+	('4', 'machucado'),
+	('5', 'filhote'),
+)
+
+
+AMBIENTE_CHOICE = (
+	('1', 'Caatinga'),
+	('2', 'Cerrado'),
+	('3', 'Area de transicao'),
+	('4', 'Area habitada'),
+)
+
+AREA_CHOICE = (
+	('1', 'Direta'),
+	('2', 'Indireta'),
+)
+
+DESTINO_CHOICE = (
+	('1', 'Soltura'),
+	('2', 'Clinica'),
+	('3', 'Descarte'),
+	('4', 'Colecao Cientifica'),
+)
+
+
+class Registro(models.Model):
+	nome = models.CharField('Nome Comum',max_length=100)
+	cientifico = models.CharField('Nome Cientifico',max_length=100)
+	grupo = models.CharField(max_length=1, choices=GRUPO_CHOICE)
+	familia = models.CharField(max_length=100)
+	estado = models.CharField(max_length=1, choices=ESTADO_CHOICE)
+	coleta = models.CharField('Local de Coleta',max_length=100)
+	Data = models.DateTimeField()
+	coletor = models.CharField(max_length=100)
+	latitude = models.IntegerField('Latitude',max_length=50)
+  longitude = models.IntegerField('Longitude',max_length=50)
+	ambiente = models.CharField(max_length=1, choices=AMBIENTE_CHOICE)
+	area = models.CharField('Area de Influencia',max_length=1,choices=AREA_CHOICE)
+	ASV = models.CharField(max_length=50)
+	contencao = models.CharField('Forma de Contencao',max_length=50)
+	destino = models.CharField(max_length=1, choices=DESTINO_CHOICE)
+
+
+	def __unicode__(self):
+	    return self.nome
