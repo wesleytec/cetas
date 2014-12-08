@@ -105,4 +105,4 @@ class AnimalRegistryMonitor(models.Model):
 	
 
 	def __unicode__(self):
-            return self.animal.especie
+            return self.animal.sexo
